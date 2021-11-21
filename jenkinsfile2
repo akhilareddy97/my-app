@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Starting to build docker image'
+                git 'https://github.com/akhilareddy97/my-app.git'
                 
                 script{
                     def customImage = docker.build("my-image:$(env.BUILD_ID}")
